@@ -54,7 +54,7 @@ public class DoubanBookCrawler {
 				getBookInfo(bookUrls);
 			}
 		});
-		es.shutdown();
+		es.shutdown();//关闭线程池
 		ExportExcel exportExcel = new ExportExcel();
 		exportExcel.exportExcel();
 		long endTime = System.currentTimeMillis();
