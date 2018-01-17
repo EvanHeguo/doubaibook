@@ -6,13 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class SaveBookInfo {
-	public static final String url = "jdbc:mysql://localhost/test";
-	public static final String name = "com.mysql.jdbc.Driver";
-	public static final String user = "root";
-	public static final String password = "root";
+	private static final String url = "jdbc:mysql://localhost/test?useUnicode=true&characterEncoding=utf-8";
+	private static final String name = "com.mysql.jdbc.Driver";
+	private static final String user = "root";
+	private static final String password = "root";
 
-	public Connection conn = null;
-	public PreparedStatement pst = null;
+	private Connection conn = null;
+	private PreparedStatement pst = null;
 
 	public void saveBookInfo(String sql) {
 		try {
