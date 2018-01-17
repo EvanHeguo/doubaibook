@@ -37,7 +37,7 @@ public class ExportExcel {
     public void exportExcel() {
         String[] titles = {"序号", "书名", "评分", "评价人数", "作者", "出版社", "出版日期", "价格"};
         //创建Excel文件
-        File file = new File("./jxl_test.xls");
+        File file = new File("./doubanbook.xls");
         try {
             file.createNewFile();
             //创建工作簿
@@ -53,7 +53,7 @@ public class ExportExcel {
             try {
                 Class.forName(name);// 指定连接类型
                 conn = DriverManager.getConnection(url, user, password);// 获取连接
-                String sql = "SELECT *FROM  books ORDER BY score limit 0,100";
+                String sql = "SELECT *FROM  books ORDER BY score desc limit 0,100";
                 st = conn.createStatement();// 准备执行语句
                 ResultSet resultSet = st.executeQuery(sql);
                 Integer i = 1;
